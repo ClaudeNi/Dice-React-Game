@@ -1,0 +1,51 @@
+.gameboard-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background: skyblue;
+}
+
+.player-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background: #594f4f;
+  width: 40%;
+}
+
+.gamesettings-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  background: #547980;
+  width: 20%;
+}
+
+.btn {
+  padding: 1rem;
+  /* border: 1px solid #000; */
+  cursor: pointer;
+  background: #45ada8;
+}
+
+.dice {
+  height: 200px;
+  width: 200px;
+  border: 1px solid #000;
+}
+
+.box-title {
+  background: #fff;
+  height: 30%;
+  width: 40%;
+}
+
+.box-current {
+  background: #fe4365;
+  height: 30%;
+  width: 40%;
+}
