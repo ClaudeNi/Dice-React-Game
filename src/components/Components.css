@@ -38,14 +38,19 @@
   border: 1px solid #000;
 }
 
-.box-title {
-  background: #fff;
+.box {
   height: 30%;
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.box-title {
+  background: #fff;
 }
 
 .box-current {
   background: #fe4365;
-  height: 30%;
-  width: 40%;
 }

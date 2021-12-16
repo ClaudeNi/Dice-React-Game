@@ -5,8 +5,8 @@ import "../Components.css";
 const Player = (props) => {
   return (
     <div className="player-container">
-      <Box classes="box-title" />
-      <Box classes="box-current" />
+      <Box classes="box box-title" text={["Player", 0]} />
+      <Box classes="box box-current" text={["Current", 0]} />
     </div>
   );
 };
