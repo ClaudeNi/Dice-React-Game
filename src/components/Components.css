@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  background: skyblue;
 }
 
 .player-container {
@@ -13,6 +12,14 @@
   height: 100vh;
   background: #594f4f;
   width: 40%;
+}
+
+.current-player {
+  background: #4f5959;
+}
+
+.winner-player {
+  background: #63f1ce;
 }
 
 .gamesettings-container {
@@ -27,30 +34,58 @@
 
 .btn {
   padding: 1rem;
-  /* border: 1px solid #000; */
   cursor: pointer;
   background: #45ada8;
+  color: #fff;
 }
 
 .dice {
   height: 200px;
   width: 200px;
-  border: 1px solid #000;
+}
+
+.dice-1 {
+  background: url("../imgs/dice-1.png") center center / cover no-repeat;
+}
+
+.dice-2 {
+  background: url("../imgs/dice-2.png") center center / cover no-repeat;
+}
+
+.dice-3 {
+  background: url("../imgs/dice-3.png") center center / cover no-repeat;
+}
+
+.dice-4 {
+  background: url("../imgs/dice-4.png") center center / cover no-repeat;
+}
+
+.dice-5 {
+  background: url("../imgs/dice-5.png") center center / cover no-repeat;
+}
+
+.dice-6 {
+  background: url("../imgs/dice-6.png") center center / cover no-repeat;
 }
 
 .box {
-  height: 30%;
-  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  border-radius: 10px;
 }
 
 .box-title {
+  height: 30%;
+  width: 60%;
   background: #fff;
+  font-size: 3rem;
 }
 
 .box-current {
+  height: 15%;
+  width: 40%;
   background: #fe4365;
+  font-size: 2rem;
 }

@@ -1,12 +1,8 @@
 import React from "react";
 import "../Components.css";
 
-const Dice = () => {
-  const rollDice = () => {
-    return Math.ceil(Math.random() * 6);
-  };
-
-  return <div className="dice">{rollDice()}</div>;
+const Dice = (props) => {
+  return <div className={"dice " + props.source}></div>;
 };
 
 export default Dice;
