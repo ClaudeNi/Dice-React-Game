@@ -20,10 +20,11 @@ class GameBoard extends React.Component {
     player2current: 0,
     inputShow: true,
     rulesShow: true,
+    btnDisable: true,
   };
 
   handleRoll = () => {
-    if (!this.state.winner) {
+    if (!this.state.winner && !this.state.btnDisable) {
       const imgUrls = {
         1: "dice-1",
         2: "dice-2",
@@ -75,7 +76,7 @@ class GameBoard extends React.Component {
   };
 
   handleHold = () => {
-    if (!this.state.winner) {
+    if (!this.state.winner && !this.state.btnDisable) {
       if (this.state.playerTurn === 1) {
         this.setState({
           players1total: this.state.players1total + this.state.player1current,
@@ -118,21 +119,24 @@ class GameBoard extends React.Component {
   };
 
   handleNewGame = () => {
-    this.setState({
-      pointsToWin: 100,
-      dice: [null, null],
-      playerTurn: 1,
-      winner: false,
-      player1Name: "Player 1",
-      player1Classes: "current-player",
-      players1total: 0,
-      player1current: 0,
-      player2Name: "Player 2",
-      player2Classes: "",
-      players2total: 0,
-      player2current: 0,
-      inputShow: true,
-    });
+    if (!this.state.btnDisable) {
+      this.setState({
+        pointsToWin: 100,
+        dice: [null, null],
+        playerTurn: 1,
+        winner: false,
+        player1Name: "Player 1",
+        player1Classes: "current-player",
+        players1total: 0,
+        player1current: 0,
+        player2Name: "Player 2",
+        player2Classes: "",
+        players2total: 0,
+        player2current: 0,
+        inputShow: true,
+        btnDisable: true,
+      });
+    }
   };
 
   handleInput = (value) => {
@@ -148,6 +152,7 @@ class GameBoard extends React.Component {
     if (this.state.pointsToWin === "" || this.state.pointsToWin === undefined) {
       this.setState({ pointsToWin: 100 });
     }
+    this.setState({ btnDisable: false });
   };
 
   handleHideRules = () => {
