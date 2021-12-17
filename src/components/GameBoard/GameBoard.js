@@ -1,6 +1,7 @@
 import React from "react";
 import Player from "../Player/Player";
 import GameSettings from "../GameSettings/GameSettings";
+import Rules from "../Rules/Rules";
 import "../Components.css";
 
 class GameBoard extends React.Component {
@@ -17,6 +18,8 @@ class GameBoard extends React.Component {
     player2Classes: "",
     players2total: 0,
     player2current: 0,
+    inputShow: true,
+    rulesShow: true,
   };
 
   handleRoll = () => {
@@ -128,12 +131,33 @@ class GameBoard extends React.Component {
       player2Classes: "",
       players2total: 0,
       player2current: 0,
+      inputShow: true,
     });
+  };
+
+  handleInput = (value) => {
+    this.setState({ pointsToWin: value });
+  };
+
+  handleLock = () => {
+    if (this.state.inputShow) {
+      this.setState({ inputShow: false });
+    } else {
+      this.setState({ inputShow: true });
+    }
+    if (this.state.pointsToWin === "" || this.state.pointsToWin === undefined) {
+      this.setState({ pointsToWin: 100 });
+    }
+  };
+
+  handleHideRules = () => {
+    this.setState({ rulesShow: false });
   };
 
   render() {
     return (
       <div className="gameboard-container">
+        {this.state.rulesShow && <Rules hideHandle={this.handleHideRules} />}
         <Player
           name={this.state.player1Name}
           current={this.state.player1Classes}
@@ -145,6 +169,9 @@ class GameBoard extends React.Component {
           rollHandle={this.handleRoll}
           holdHandle={this.handleHold}
           newGameHandle={this.handleNewGame}
+          inputHandle={this.handleInput}
+          inputShow={this.state.inputShow}
+          lockHandle={this.handleLock}
         />
         <Player
           name={this.state.player2Name}
