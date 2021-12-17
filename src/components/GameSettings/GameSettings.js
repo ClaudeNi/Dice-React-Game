@@ -6,12 +6,24 @@ import Dice from "../Dice/Dice";
 const GameSettings = (props) => {
   return (
     <div className="gamesettings-container">
-      <Btn text="New Game" handleClick={props.newGameHandle} />
+      <Btn
+        icon={<i class="fal fa-sparkles"></i>}
+        text="New Game"
+        handleClick={props.newGameHandle}
+      />
       <Dice source={props.diceImgs[0]} />
       <Dice source={props.diceImgs[1]} />
-      <Btn text="Roll Dice" handleClick={props.rollHandle} />
-      <Btn text="Hold" handleClick={props.holdHandle} />
-      <input></input>
+      <Btn
+        icon={<i class="fal fa-dice-six"></i>}
+        text="Roll Dice"
+        handleClick={props.rollHandle}
+      />
+      <Btn
+        icon={<i class="fal fa-hand-paper"></i>}
+        text="Hold"
+        handleClick={props.holdHandle}
+      />
+      <input placeholder="Input Goal"></input>
     </div>
   );
 };

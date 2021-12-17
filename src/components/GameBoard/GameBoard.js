@@ -36,7 +36,7 @@ class GameBoard extends React.Component {
         dice: [imgUrls[dice1], imgUrls[dice2]],
       });
 
-      if (dice1 === 6 && dice2 === 6) {
+      if (dice1 === dice2) {
         if (this.state.playerTurn === 1) {
           this.setState({
             player1current: 0,

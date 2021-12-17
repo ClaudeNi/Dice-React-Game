@@ -4,7 +4,7 @@ import "../Components.css";
 const Btn = (props) => {
   return (
     <div className="btn" onClick={props.handleClick}>
-      {props.text}
+      <span className="icon">{props.icon}</span> {props.text}
     </div>
   );
 };

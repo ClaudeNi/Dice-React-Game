@@ -33,10 +33,30 @@
 }
 
 .btn {
+  user-select: none;
+  border-radius: 10px;
+  border: 1px solid #000;
+  text-decoration: none;
   padding: 1rem;
   cursor: pointer;
   background: #45ada8;
   color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  transition: all 0.08s ease-in-out;
+}
+
+.btn:hover {
+  background: #327c79;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+
+.btn .icon {
+  margin-right: 1rem;
 }
 
 .dice {
@@ -69,6 +89,7 @@
 }
 
 .box {
+  user-select: none;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -88,4 +109,11 @@
   width: 40%;
   background: #fe4365;
   font-size: 2rem;
+}
+
+input {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-radius: 5px;
 }
