@@ -18,11 +18,17 @@ const Rules = (props) => {
           turn order will move to your opponent.
         </li>
       </ul>
+      <span className="warning">
+        warning: music will start playing once you press begin.
+      </span>
       <Btn
-        icon={<i class="fal fa-flag-checkered"></i>}
+        icon={<i className="fal fa-flag-checkered"></i>}
         text="Begin"
         handleClick={props.hideHandle}
       />
+      <a className="link" href="https://www.hooksounds.com/">
+        Background Music by HookSounds
+      </a>
     </div>
   );
 };

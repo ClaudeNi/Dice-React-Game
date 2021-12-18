@@ -3,6 +3,12 @@ import Player from "../Player/Player";
 import GameSettings from "../GameSettings/GameSettings";
 import Rules from "../Rules/Rules";
 import "../Components.css";
+import bgm from "../../audio/bgm.mp3";
+import diceSE1 from "../../audio/diceRoll1.wav";
+import diceSE2 from "../../audio/diceRoll2.wav";
+import diceSE3 from "../../audio/diceRoll3.wav";
+import diceSE4 from "../../audio/diceRoll4.wav";
+import diceSE5 from "../../audio/diceRoll5.wav";
 
 class GameBoard extends React.Component {
   state = {
@@ -14,10 +20,12 @@ class GameBoard extends React.Component {
     player1Classes: "current-player",
     players1total: 0,
     player1current: 0,
+    isPlayer1: true,
     player2Name: "Player 2",
     player2Classes: "",
     players2total: 0,
     player2current: 0,
+    isPlayer2: false,
     inputShow: true,
     rulesShow: true,
     btnDisable: true,
@@ -36,6 +44,8 @@ class GameBoard extends React.Component {
       const dice1 = this.rollDice();
       const dice2 = this.rollDice();
 
+      this.handleDiceSoundPlay();
+
       this.setState({
         dice: [imgUrls[dice1], imgUrls[dice2]],
       });
@@ -47,6 +57,8 @@ class GameBoard extends React.Component {
             playerTurn: 2,
             player1Classes: "",
             player2Classes: "current-player",
+            isPlayer1: false,
+            isPlayer2: true,
           });
         } else {
           this.setState({
@@ -54,6 +66,8 @@ class GameBoard extends React.Component {
             playerTurn: 1,
             player1Classes: "current-player",
             player2Classes: "",
+            isPlayer1: true,
+            isPlayer2: false,
           });
         }
       } else {
@@ -84,6 +98,8 @@ class GameBoard extends React.Component {
           playerTurn: 2,
           player1Classes: "",
           player2Classes: "current-player",
+          isPlayer1: false,
+          isPlayer2: true,
         });
       } else {
         this.setState({
@@ -92,6 +108,8 @@ class GameBoard extends React.Component {
           playerTurn: 1,
           player1Classes: "current-player",
           player2Classes: "",
+          isPlayer1: true,
+          isPlayer2: false,
         });
       }
       setTimeout(() => {
@@ -107,6 +125,7 @@ class GameBoard extends React.Component {
         winner: true,
         player1Classes: "winner-player",
         player2Classes: "",
+        isPlayer2: false,
       });
     } else if (this.state.players2total >= this.state.pointsToWin) {
       this.setState({
@@ -114,6 +133,7 @@ class GameBoard extends React.Component {
         winner: true,
         player1Classes: "",
         player2Classes: "winner-player",
+        isPlayer1: false,
       });
     }
   };
@@ -129,10 +149,12 @@ class GameBoard extends React.Component {
         player1Classes: "current-player",
         players1total: 0,
         player1current: 0,
+        isPlayer1: true,
         player2Name: "Player 2",
         player2Classes: "",
         players2total: 0,
         player2current: 0,
+        isPlayer2: false,
         inputShow: true,
         btnDisable: true,
       });
@@ -157,6 +179,22 @@ class GameBoard extends React.Component {
 
   handleHideRules = () => {
     this.setState({ rulesShow: false });
+    this.handlePlayBGM();
+  };
+
+  handlePlayBGM = () => {
+    const bgmEl = new Audio(bgm);
+    bgmEl.volume = 0.5;
+    bgmEl.loop = true;
+    bgmEl.play();
+  };
+
+  handleDiceSoundPlay = () => {
+    const diceSoundEffects = [diceSE1, diceSE2, diceSE3, diceSE4, diceSE5];
+    const randomDiceSound = diceSoundEffects[Math.floor(Math.random() * 5)];
+    const diceSoundEl = new Audio(randomDiceSound);
+    diceSoundEl.volume = 0.8;
+    diceSoundEl.play();
   };
 
   render() {
@@ -168,6 +206,7 @@ class GameBoard extends React.Component {
           current={this.state.player1Classes}
           totalDice={this.state.players1total}
           currentDice={this.state.player1current}
+          isTheirTurn={this.state.isPlayer1}
         />
         <GameSettings
           diceImgs={this.state.dice}
@@ -183,6 +222,7 @@ class GameBoard extends React.Component {
           current={this.state.player2Classes}
           totalDice={this.state.players2total}
           currentDice={this.state.player2current}
+          isTheirTurn={this.state.isPlayer2}
         />
       </div>
     );

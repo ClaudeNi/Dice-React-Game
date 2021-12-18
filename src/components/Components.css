@@ -36,6 +36,16 @@
   padding: 1rem;
 }
 
+.warning {
+  color: #eed202;
+  font-size: 1.5rem;
+}
+
+.link {
+  color: #0b0080;
+  text-decoration: none;
+}
+
 .player-container {
   display: flex;
   flex-direction: column;
@@ -48,6 +58,11 @@
 
 .current-player {
   background: #4f5959;
+}
+
+.current-icon {
+  color: #fe4365;
+  font-size: 2rem;
 }
 
 .winner-player {

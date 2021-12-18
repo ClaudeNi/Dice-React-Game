@@ -9,6 +9,8 @@ const Player = (props) => {
         classes="box box-title"
         icon={<i className="fas fa-user"></i>}
         text={[props.name, props.totalDice]}
+        isTheirTurn={props.isTheirTurn}
+        current={<i className="fas fa-circle"></i>}
       />
       <Box
         classes="box box-current"
