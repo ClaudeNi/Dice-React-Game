@@ -1,3 +1,17 @@
+@media (max-height: 700px) {
+  .dice {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media (max-height: 500px) {
+  .dice {
+    height: 50px;
+    width: 50px;
+  }
+}
+
 @media (max-width: 1700px) {
   :root {
     font-size: 12px;
@@ -13,6 +27,30 @@
     font-size: 8px;
   }
 
+  .rules-container .title {
+    font-size: 5.5rem;
+  }
+
+  .rules-container .subtitle {
+    font-size: 4.5rem;
+  }
+
+  .rules-container ul {
+    font-size: 4rem;
+  }
+
+  .warning {
+    font-size: 2.5rem;
+  }
+
+  .rules-container .btn {
+    font-size: 4rem;
+  }
+
+  .link {
+    font-size: 2rem;
+  }
+
   .intro-container p {
     font-size: 1.7rem;
   }
@@ -23,9 +61,59 @@
   }
 }
 
+@media (max-width: 920px) {
+  .rules-container .title {
+    font-size: 5rem;
+  }
+
+  .rules-container .subtitle {
+    font-size: 4rem;
+  }
+
+  .rules-container ul {
+    font-size: 3rem;
+  }
+
+  .warning {
+    font-size: 2rem;
+  }
+
+  .rules-container .btn {
+    font-size: 4rem;
+  }
+
+  .link {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 850px) {
   :root {
     font-size: 6px;
+  }
+
+  .rules-container .title {
+    font-size: 5.5rem;
+  }
+
+  .rules-container .subtitle {
+    font-size: 4.5rem;
+  }
+
+  .rules-container ul {
+    font-size: 4rem;
+  }
+
+  .warning {
+    font-size: 2.5rem;
+  }
+
+  .rules-container .btn {
+    font-size: 4rem;
+  }
+
+  .link {
+    font-size: 2rem;
   }
 
   .dice {
@@ -38,18 +126,54 @@
   :root {
     font-size: 5px;
   }
-}
 
-@media (max-height: 700px) {
-  .dice {
-    height: 100px;
-    width: 100px;
+  .rules-container .title {
+    font-size: 5.5rem;
+  }
+
+  .rules-container .subtitle {
+    font-size: 4.5rem;
+  }
+
+  .rules-container ul {
+    font-size: 4rem;
+  }
+
+  .warning {
+    font-size: 2.5rem;
+  }
+
+  .rules-container .btn {
+    font-size: 4rem;
+  }
+
+  .link {
+    font-size: 2rem;
   }
 }
 
-@media (max-height: 500px) {
-  .dice {
-    height: 50px;
-    width: 50px;
+@media (max-width: 500px) {
+  .rules-container .title {
+    font-size: 3.5rem;
+  }
+
+  .rules-container .subtitle {
+    font-size: 3rem;
+  }
+
+  .rules-container ul {
+    font-size: 3rem;
+  }
+
+  .warning {
+    font-size: 2rem;
+  }
+
+  .rules-container .btn {
+    font-size: 4rem;
+  }
+
+  .link {
+    font-size: 2rem;
   }
 }
