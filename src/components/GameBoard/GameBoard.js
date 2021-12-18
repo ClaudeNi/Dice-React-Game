@@ -9,6 +9,8 @@ import diceSE2 from "../../audio/diceRoll2.wav";
 import diceSE3 from "../../audio/diceRoll3.wav";
 import diceSE4 from "../../audio/diceRoll4.wav";
 import diceSE5 from "../../audio/diceRoll5.wav";
+import diceBad from "../../audio/diceBad.wav";
+import victory from "../../audio/victory.mp3";
 
 class GameBoard extends React.Component {
   state = {
@@ -60,6 +62,7 @@ class GameBoard extends React.Component {
             isPlayer1: false,
             isPlayer2: true,
           });
+          this.handleSoundEffectPlay(diceBad);
         } else {
           this.setState({
             player2current: 0,
@@ -69,6 +72,7 @@ class GameBoard extends React.Component {
             isPlayer1: true,
             isPlayer2: false,
           });
+          this.handleSoundEffectPlay(diceBad);
         }
       } else {
         this.addUpDice(dice1, dice2);
@@ -127,6 +131,7 @@ class GameBoard extends React.Component {
         player2Classes: "",
         isPlayer2: false,
       });
+      this.handleSoundEffectPlay(victory);
     } else if (this.state.players2total >= this.state.pointsToWin) {
       this.setState({
         player2Name: "WINNER!",
@@ -135,6 +140,7 @@ class GameBoard extends React.Component {
         player2Classes: "winner-player",
         isPlayer1: false,
       });
+      this.handleSoundEffectPlay(victory);
     }
   };
 
@@ -193,8 +199,14 @@ class GameBoard extends React.Component {
     const diceSoundEffects = [diceSE1, diceSE2, diceSE3, diceSE4, diceSE5];
     const randomDiceSound = diceSoundEffects[Math.floor(Math.random() * 5)];
     const diceSoundEl = new Audio(randomDiceSound);
-    diceSoundEl.volume = 0.8;
+    diceSoundEl.volume = 0.6;
     diceSoundEl.play();
+  };
+
+  handleSoundEffectPlay = (soundEffect) => {
+    const victoryEl = new Audio(soundEffect);
+    victoryEl.volume = 0.8;
+    victoryEl.play();
   };
 
   render() {
