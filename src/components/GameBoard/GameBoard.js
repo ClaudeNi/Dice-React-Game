@@ -3,6 +3,7 @@ import Player from "../Player/Player";
 import GameSettings from "../GameSettings/GameSettings";
 import Rules from "../Rules/Rules";
 import "../Components.css";
+import "../media.css";
 import bgm from "../../audio/bgm.mp3";
 import diceSE1 from "../../audio/diceRoll1.wav";
 import diceSE2 from "../../audio/diceRoll2.wav";

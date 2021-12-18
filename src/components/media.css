@@ -1,0 +1,55 @@
+@media (max-width: 1700px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .intro-container p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  :root {
+    font-size: 8px;
+  }
+
+  .intro-container p {
+    font-size: 1.7rem;
+  }
+
+  .dice {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media (max-width: 850px) {
+  :root {
+    font-size: 6px;
+  }
+
+  .dice {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    font-size: 5px;
+  }
+}
+
+@media (max-height: 700px) {
+  .dice {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media (max-height: 500px) {
+  .dice {
+    height: 50px;
+    width: 50px;
+  }
+}
